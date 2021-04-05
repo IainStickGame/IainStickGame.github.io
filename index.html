@@ -3,13 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | StickManTwitchChat</title>
-    <script src="Build/UnityLoader.js"></script>
-    <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/Builds.json");
-    </script>
+    <title>Unity WebGL Player | TwitchStickmenTwo</title>
+	<style type="text/css">
+		html, body, #unity-canvas {
+			background-color: transparent;
+		}
+		#unity-canvas {
+			width:1920px;
+			height:450px;
+		}
+	</style>
   </head>
-  <body>
-    <div id="unityContainer" style="width: 1920px; height: 450px; margin: auto"></div>
+  <body style="text-align: center">
+    <canvas id="unity-canvas"></canvas>
+    <script src="Build/Builds.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/Builds.data.gz",
+        frameworkUrl: "Build/Builds.framework.js.gz",
+        codeUrl: "Build/Builds.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "TwitchStickmenTwo",
+        productVersion: "0.1",
+      });
+    </script>
   </body>
 </html>
