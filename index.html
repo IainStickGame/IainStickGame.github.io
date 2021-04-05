@@ -4,15 +4,24 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | TwitchStickmenTwo</title>
+	<style type="text/css">
+		html, body, #unity-canvas {
+			background-color: transparent;
+		}
+		#unity-canvas {
+			width:1920px;
+			height:450px;
+		}
+	</style>
   </head>
   <body style="text-align: center">
-    <canvas id="unity-canvas" style="width: 1920px; height: 450px; background: #231F20"></canvas>
+    <canvas id="unity-canvas"></canvas>
     <script src="Build/Builds.loader.js"></script>
     <script>
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Builds.data.gz",
-        frameworkUrl: "Build/Builds.framework.js.gz",
-        codeUrl: "Build/Builds.wasm.gz",
+        dataUrl: "Build/Builds.data",
+        frameworkUrl: "Build/Builds.framework.js",
+        codeUrl: "Build/Builds.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "TwitchStickmenTwo",
